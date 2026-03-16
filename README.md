@@ -28,13 +28,3 @@
 
 </div>
 ```
-
-**3. Cria a Release neste novo repositório**
-- **Releases → Create a new release**
-- Tag: `v1.2.0`
-- Anexa o `Monitor Solar.exe`
-- Publica
-
-**4. Link de download público:**
-```
-https://github.com/LucasMauril/Monitor-Solar-App/releases/latest/download/Monitor.Solar.exe
