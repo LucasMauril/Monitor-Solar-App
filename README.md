@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌞 Monitor Solar
+#  Monitor Solar
 
 **Dashboard em tempo real para painéis solares com Arduino**
 
