@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/LucasMauril/Monitor-Solar-App/main/icon.svg" width="100" height="100" alt="Monitor Solar"/>
 
-<h1>🌞 Monitor Solar</h1>
+<h1> Monitor Solar</h1>
 
 <p><strong>Dashboard em tempo real para painéis solares com Arduino</strong></p>
 
