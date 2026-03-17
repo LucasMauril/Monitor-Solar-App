@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/LucasMauril/Monitor-Solar/main/icon.svg" width="100" height="100" alt="Monitor Solar"/>
+<img src="https://raw.githubusercontent.com/LucasMauril/Monitor-Solar-App/main/icon.svg" width="100" height="100" alt="Monitor Solar"/>
 
 <h1>🌞 Monitor Solar</h1>
 
