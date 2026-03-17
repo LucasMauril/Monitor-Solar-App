@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#1e2235"/>
+      <stop offset="100%" stop-color="#141722"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#f5c842"/>
+      <stop offset="100%" stop-color="#f5a623"/>
+    </linearGradient>
+    <linearGradient id="ray" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#7b9aff"/>
+      <stop offset="100%" stop-color="#6c8aff"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#34cba4" stop-opacity="0"/>
+      <stop offset="40%"  stop-color="#34cba4"/>
+      <stop offset="100%" stop-color="#34cba4" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="256" height="256" rx="52" fill="url(#bg)"/>
+
+  <!-- Subtle inner glow ring -->
+  <rect x="8" y="8" width="240" height="240" rx="46"
+        fill="none" stroke="rgba(108,138,255,0.12)" stroke-width="2"/>
+
+  <!-- Solar rays (8 rays) -->
+  <!-- Top -->
+  <rect x="121" y="28" width="14" height="28" rx="7" fill="url(#ray)" opacity="0.9"/>
+  <!-- Bottom -->
+  <rect x="121" y="200" width="14" height="28" rx="7" fill="url(#ray)" opacity="0.9"/>
+  <!-- Left -->
+  <rect x="28" y="121" width="28" height="14" rx="7" fill="url(#ray)" opacity="0.9"/>
+  <!-- Right -->
+  <rect x="200" y="121" width="28" height="14" rx="7" fill="url(#ray)" opacity="0.9"/>
+  <!-- Diagonal rays -->
+  <rect x="62" y="55" width="14" height="28" rx="7" fill="url(#ray)" opacity="0.7"
+        transform="rotate(-45 69 69)"/>
+  <rect x="180" y="55" width="14" height="28" rx="7" fill="url(#ray)" opacity="0.7"
+        transform="rotate(45 187 69)"/>
+  <rect x="62" y="173" width="14" height="28" rx="7" fill="url(#ray)" opacity="0.7"
+        transform="rotate(45 69 187)"/>
+  <rect x="180" y="173" width="14" height="28" rx="7" fill="url(#ray)" opacity="0.7"
+        transform="rotate(-45 187 187)"/>
+
+  <!-- Sun circle -->
+  <circle cx="128" cy="128" r="54" fill="url(#sun)"/>
+
+  <!-- Sun inner shine -->
+  <circle cx="112" cy="112" r="18" fill="rgba(255,255,255,0.15)"/>
+
+  <!-- Wave / chart line inside sun -->
+  <path d="M 88 128 Q 100 110 112 128 Q 124 146 136 128 Q 148 110 160 128 Q 172 146 178 128"
+        fill="none" stroke="rgba(30,34,53,0.5)" stroke-width="5.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 88 128 Q 100 110 112 128 Q 124 146 136 128 Q 148 110 160 128 Q 172 146 178 128"
+        fill="none" stroke="rgba(30,34,53,0.9)" stroke-width="3.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Small dot on wave -->
+  <circle cx="178" cy="128" r="5" fill="#1e2235"/>
+
+  <!-- Bottom glow line (energy bar) -->
+  <rect x="64" y="210" width="128" height="6" rx="3" fill="url(#wave)" opacity="0.7"/>
+
+  <!-- Small circuit dots decoration -->
+  <circle cx="48"  cy="48"  r="3" fill="rgba(108,138,255,0.4)"/>
+  <circle cx="208" cy="48"  r="3" fill="rgba(108,138,255,0.4)"/>
+  <circle cx="48"  cy="208" r="3" fill="rgba(108,138,255,0.4)"/>
+  <circle cx="208" cy="208" r="3" fill="rgba(108,138,255,0.4)"/>
+</svg>
