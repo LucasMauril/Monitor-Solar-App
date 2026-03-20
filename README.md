@@ -2,18 +2,18 @@
 
 <img src="https://raw.githubusercontent.com/LucasMauril/Monitor-Solar-App/main/icon.svg" width="100" height="100" alt="Monitor Solar"/>
 
-<h1> Monitor Solar</h1>
+<h1>Monitor Solar</h1>
 
 <p><strong>Dashboard em tempo real para painéis solares com Arduino</strong></p>
 
 <a href="https://github.com/LucasMauril/Monitor-Solar-App/releases/latest/download/Monitor.Solar.exe">
-  <img src="https://img.shields.io/badge/⬇%20BAIXAR%20AGORA-Monitor%20Solar%20v1.3.0-6c8aff?style=for-the-badge&logoColor=white" alt="Download"/>
+  <img src="https://img.shields.io/badge/⬇%20BAIXAR%20AGORA-Monitor%20Solar%20v1.4.0-6c8aff?style=for-the-badge&logoColor=white" alt="Download"/>
 </a>
 
 <br/><br/>
 
 <img src="https://img.shields.io/badge/Windows_10%2B-0078D6?style=flat-square&logo=windows&logoColor=white"/>
-<img src="https://img.shields.io/badge/versão-1.3.0-34cba4?style=flat-square"/>
+<img src="https://img.shields.io/badge/versão-1.4.0-34cba4?style=flat-square"/>
 <img src="https://img.shields.io/badge/gratuito-sim-f5a623?style=flat-square"/>
 <img src="https://img.shields.io/badge/Arduino-compatível-00979D?style=flat-square&logo=arduino&logoColor=white"/>
 <img src="https://img.shields.io/badge/sem_instalação-✓-6c8aff?style=flat-square"/>
@@ -31,20 +31,20 @@
 
 <table>
 <tr>
-<td width="60px" align="center">1️⃣</td>
+<td width="60px" align="center">1</td>
 <td><a href="https://github.com/LucasMauril/Monitor-Solar-App/releases/latest/download/Monitor.Solar.exe"><strong>Baixe o Monitor Solar.exe</strong></a> pelo botão acima</td>
 </tr>
 <tr>
-<td align="center">2️⃣</td>
+<td align="center">2</td>
 <td>Execute diretamente — <strong>não precisa instalar Python nem nada</strong></td>
 </tr>
 <tr>
-<td align="center">3️⃣</td>
+<td align="center">3</td>
 <td>Na primeira abertura, siga o assistente de configuração</td>
 </tr>
 <tr>
-<td align="center">4️⃣</td>
-<td>Clique em <strong>Iniciar tour</strong> para conhecer todas as funcionalidades em 31 passos</td>
+<td align="center">4</td>
+<td>Clique em <strong>Iniciar tour</strong> para conhecer todas as funcionalidades em 33 passos</td>
 </tr>
 </table>
 
@@ -70,27 +70,28 @@ Ou adicione uma exclusão no Windows Defender para a pasta onde o `.exe` está.
 <summary><b>📊 Dashboard ao vivo</b></summary>
 <br/>
 
-- Gráfico de potência com **gradiente animado** e tooltip interativo
-- Barras de estatísticas com **animação de mola** — atualizam suavemente
-- **Gauge de eficiência** calculado em tempo real (potência ÷ capacidade máxima)
-- Cards de tensão, corrente, consumo e saldo energético
-- Temperatura do painel (DS18B20) + ambiente e umidade (DHT22)
-- Luminosidade dos LDRs em tempo real
+- Gráfico de potência com gradiente animado e tooltip interativo
+- **Sparklines** nos cards de tensão, corrente, potência e consumo
+- **Gauge de eficiência** com zona verde e temperatura do painel integrada
+- Badge de **ganho do tracker** em tempo real (+X%)
+- Card de Saldo que **pulsa em vermelho** quando o consumo supera a geração
+- Temperatura do painel (DS18B20) com alerta de cor acima de 55°C/70°C
+- Animações de entrada suaves nos cards ao trocar de aba
 - Exportar **CSV** e **relatório PDF** completo
 
 </details>
 
 <details>
-<summary><b>☀️ Tracker Solar 2 eixos</b></summary>
+<summary><b>☀️ Tracker Solar 2 eixos — Servo MG996R</b></summary>
 <br/>
 
+- Servo **MG996R** (11kg/cm) para painéis maiores e mais pesados
 - Diagrama SVG animado que segue os dados em tempo real
-- **Eixo vertical:** LDR Topo (A3) vs LDR Base (A4) — inclina para cima/baixo
+- **Eixo vertical:** LDR Topo (A3) vs LDR Base (A4)
 - **Eixo horizontal:** expansível com 3º LDR no Arduino Nano
-- Indicador de decisão dos LDRs ao vivo: `→ subindo ↑` / `→ descendo ↓` / `→ estável`
-- **Simulação solar pela hora do dia** — funciona sem Arduino!
+- **Simulação solar pela hora real do dia** — sem Arduino!
 - Controle manual dos servos via sliders
-- Gráfico histórico dos ângulos H e V ao longo do dia
+- Gráfico histórico dos ângulos H e V
 
 </details>
 
@@ -98,41 +99,61 @@ Ou adicione uma exclusão no Windows Defender para a pasta onde o `.exe` está.
 <summary><b>💾 Histórico e SD Card</b></summary>
 <br/>
 
-- **Aba Ao vivo:** gráfico da sessão atual com pico, média e horário mais eficiente
-- **Aba Histórico SD:** importa dados do cartão via comando `SD:READ`
+- **Aba Ao vivo:** gráfico da sessão com pico, média e horário mais eficiente
+- **Aba Histórico SD:** importa dados do cartão via `SD:READ`
 - **Aba Comparativo:** energia com tracker vs sem tracker em %
 - Gravação automática no SD Card a cada 1 minuto
-- Ganho do tracker calculado pelo Arduino usando os LDRs
+- Ganho do tracker calculado pelo Arduino com os LDRs
 
 </details>
 
 <details>
-<summary><b>🔔 Alertas automáticos</b></summary>
+<summary><b>🔧 Calibração dos sensores pelo app</b></summary>
 <br/>
 
-- Potência mínima — alerta se a geração cair abaixo do esperado
-- Potência máxima — alerta se ultrapassar a capacidade
-- Tensão mínima — indica sombreamento ou problema no circuito
-- **Consumo superando geração** — saldo energético negativo
-- Notificações toast em tempo real + histórico dos últimos 20 alertas
+- Sliders para ajustar **Zero da corrente** dos ACS712 sem recompilar o Arduino
+- Ajuste do **fator do divisor de tensão** em tempo real
+- Envio via Serial com confirmação — valores persistem entre sessões
 
 </details>
 
 <details>
-<summary><b>🎯 Tour guiado — 31 passos em 7 seções</b></summary>
+<summary><b>🖥️ Modo Apresentação</b></summary>
 <br/>
 
-O tour entra automaticamente em cada página e destaca os elementos com spotlight:
+- Atalho **F5** ou botão na barra lateral
+- Sidebar some, KPIs gigantes (48px) centralizados
+- 4 cards: Potência, Tensão, Saldo e Temperatura
+- Gráfico grande de potência ao vivo
+- Barra superior com relógio, status e badge v1.4
+- **ESC** para sair
+
+</details>
+
+<details>
+<summary><b>🔬 Simulador Wokwi integrado</b></summary>
+<br/>
+
+- Botão na aba Hardware abre o Wokwi automaticamente
+- **diagram.json copiado para o clipboard** ao clicar
+- Circuito completo: Arduino Uno + ACS712 ×2 + LDR ×2 + DHT22 + Servo ×2
+- Modal com passo a passo para carregar o diagrama
+
+</details>
+
+<details>
+<summary><b>🎯 Tour guiado — 33 passos em 7 seções</b></summary>
+<br/>
 
 | Seção | Passos | O que mostra |
 |-------|--------|-------------|
-| Dashboard | 5 | Gráfico, potência, modo, serial |
-| Simulação | 4 | Iniciar, cenários, sliders |
-| Histórico | 5 | 3 abas, importar SD |
-| Alertas | 3 | Limites, saldo negativo |
-| Configurações | 4 | Porta serial, LDR, meta |
-| Hardware | 4 | Componentes, diagrama, passo a passo |
-| Tracker | 6 | Diagramas, eixos, simular, toggle |
+| Dashboard | 7 | Gráfico, sparklines, saldo, temperatura, Modo Apresentação |
+| Simulação | 4 | Iniciar, cenários com temperatura/umidade, sliders |
+| Histórico | 5 | 3 abas, importar SD, comparativo tracker |
+| Alertas | 3 | Limites, cooldown 30s, saldo negativo |
+| Configurações | 5 | Porta serial, LDR, calibração ACS712, fator tensão |
+| Hardware | 3 | Wokwi, componentes v1.4, diagrama |
+| Tracker | 5 | Diagramas, simulação solar, controle manual |
 
 </details>
 
@@ -149,23 +170,34 @@ O tour entra automaticamente em cada página e destaca os elementos com spotligh
 
 ---
 
-## 📋 Novidades da v1.3.0
+## 📋 Novidades da v1.4.0
 
 ```
-✅ Dashboard redesenhado com gradiente animado e tooltip interativo
-✅ Barras de estatísticas com animação de mola — sem piscar
-✅ Tour guiado expandido: 31 passos em 7 seções (era 8 passos)
-✅ Tracker com indicador de decisão LDR em tempo real
-✅ Simulação solar funciona pela hora real do dia
-✅ Página de alertas completamente reescrita com explicações
-✅ Configurações: novas seções de Tracker e SD Card
-✅ Transições suaves entre todas as páginas
-✅ Gauge de eficiência real baseado nos dados do painel
+✅ Servo MG996R (11kg/cm) para painéis maiores
+✅ Calibração dos sensores ACS712 pelo app — sem recompilar
+✅ Sparklines nos cards de tensão, corrente, potência e consumo
+✅ Badge de ganho do tracker no card de potência
+✅ Card de saldo pulsa em vermelho quando negativo
+✅ Temperatura integrada no gauge de eficiência
+✅ Modo Apresentação com KPIs gigantes e gráfico ao vivo
+✅ Botão Wokwi com animação e cópia automática do diagram.json
+✅ Tour atualizado para 33 passos com todas as novidades
+✅ Simulação completa: temperatura, umidade, LDRs e tracker por hora
+✅ Proteção IP65 e bateria 18650 documentadas na aba Hardware
+✅ Alertas movidos para canto inferior direito, máx 3 visíveis
+✅ Cooldown de 30s entre alertas do mesmo tipo
+✅ Design das telas de verificação completamente renovado
 ```
 
 <details>
 <summary>Ver versões anteriores</summary>
 <br/>
+
+**v1.3.0**
+- Dashboard redesenhado com gradiente animado e tooltip interativo
+- Tour guiado expandido: 31 passos em 7 seções
+- Tracker com indicador de decisão LDR em tempo real
+- Simulação solar funciona pela hora real do dia
 
 **v1.2.0**
 - Seguidor solar 2 eixos com diagrama SVG animado
