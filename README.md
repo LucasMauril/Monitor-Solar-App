@@ -7,13 +7,13 @@
 <p><strong>Dashboard em tempo real para painéis solares com Arduino</strong></p>
 
 <a href="https://github.com/LucasMauril/Monitor-Solar-App/releases/latest/download/Monitor.Solar.exe">
-  <img src="https://img.shields.io/badge/⬇%20BAIXAR%20AGORA-Monitor%20Solar%20v1.4.0-6c8aff?style=for-the-badge&logoColor=white" alt="Download"/>
+  <img src="https://img.shields.io/badge/⬇%20BAIXAR%20AGORA-Monitor%20Solar%20v1.5.0-6c8aff?style=for-the-badge&logoColor=white" alt="Download"/>
 </a>
 
 <br/><br/>
 
 <img src="https://img.shields.io/badge/Windows_10%2B-0078D6?style=flat-square&logo=windows&logoColor=white"/>
-<img src="https://img.shields.io/badge/versão-1.4.0-34cba4?style=flat-square"/>
+<img src="https://img.shields.io/badge/versão-1.5.0-34cba4?style=flat-square"/>
 <img src="https://img.shields.io/badge/gratuito-sim-f5a623?style=flat-square"/>
 <img src="https://img.shields.io/badge/Arduino-compatível-00979D?style=flat-square&logo=arduino&logoColor=white"/>
 <img src="https://img.shields.io/badge/sem_instalação-✓-6c8aff?style=flat-square"/>
@@ -76,7 +76,7 @@ Ou adicione uma exclusão no Windows Defender para a pasta onde o `.exe` está.
 - Badge de **ganho do tracker** em tempo real (+X%)
 - Card de Saldo que **pulsa em vermelho** quando o consumo supera a geração
 - Temperatura do painel (DS18B20) com alerta de cor acima de 55°C/70°C
-- Animações de entrada suaves nos cards ao trocar de aba
+- **ECONOMIA HOJE** em R$ com CO₂ evitado e projeção mensal
 - Exportar **CSV** e **relatório PDF** completo
 
 </details>
@@ -87,11 +87,11 @@ Ou adicione uma exclusão no Windows Defender para a pasta onde o `.exe` está.
 
 - Servo **MG996R** (11kg/cm) para painéis maiores e mais pesados
 - Diagrama SVG animado que segue os dados em tempo real
-- **Eixo vertical:** LDR Topo (A3) vs LDR Base (A4)
-- **Eixo horizontal:** expansível com 3º LDR no Arduino Nano
-- **Simulação solar pela hora real do dia** — sem Arduino!
+- **Modo noturno automático** 🌙 — servos vão para posição de repouso ao anoitecer
+- Intervalo configurável: 1min / 5min / **15min** / 30min / 1h
+- **Gráfico histórico do ganho** — últimas 12h de eficiência
+- Simulação solar pela hora real do dia — sem Arduino!
 - Controle manual dos servos via sliders
-- Gráfico histórico dos ângulos H e V
 
 </details>
 
@@ -122,38 +122,50 @@ Ou adicione uma exclusão no Windows Defender para a pasta onde o `.exe` está.
 <br/>
 
 - Atalho **F5** ou botão na barra lateral
+- **Tela cheia automática** ao entrar — cobre a barra de tarefas
 - Sidebar some, KPIs gigantes (48px) centralizados
-- 4 cards: Potência, Tensão, Saldo e Temperatura
-- Gráfico grande de potência ao vivo
-- Barra superior com relógio, status e badge v1.4
-- **ESC** para sair
+- **Auto-rotação** entre abas: Dashboard → Tracker → Histórico
+- **QR Code do GitHub** para os espectadores escanearem
+- Barra superior com relógio, status e badge v1.5
+- **ESC** para sair e restaurar a janela
 
 </details>
 
 <details>
-<summary><b>🔬 Simulador Wokwi integrado</b></summary>
+<summary><b>⌨️ Atalhos de teclado</b></summary>
 <br/>
 
-- Botão na aba Hardware abre o Wokwi automaticamente
-- **diagram.json copiado para o clipboard** ao clicar
-- Circuito completo: Arduino Uno + ACS712 ×2 + LDR ×2 + DHT22 + Servo ×2
-- Modal com passo a passo para carregar o diagrama
+| Tecla | Ação |
+|-------|------|
+| F1 | Dashboard |
+| F2 | Simulação |
+| F3 | Histórico |
+| F4 | Tracker |
+| F5 | Modo Apresentação |
+| F6 | Alertas |
+| F7 | Configurações |
+| F8 | Hardware |
+| Ctrl+P | Exportar PDF |
+| ESC | Sair/Fechar tour |
 
 </details>
 
 <details>
-<summary><b>🎯 Tour guiado — 33 passos em 7 seções</b></summary>
+<summary><b>🔔 Notificações e sons</b></summary>
 <br/>
 
-| Seção | Passos | O que mostra |
-|-------|--------|-------------|
-| Dashboard | 7 | Gráfico, sparklines, saldo, temperatura, Modo Apresentação |
-| Simulação | 4 | Iniciar, cenários com temperatura/umidade, sliders |
-| Histórico | 5 | 3 abas, importar SD, comparativo tracker |
-| Alertas | 3 | Limites, cooldown 30s, saldo negativo |
-| Configurações | 5 | Porta serial, LDR, calibração ACS712, fator tensão |
-| Hardware | 3 | Wokwi, componentes v1.4, diagrama |
-| Tracker | 5 | Diagramas, simulação solar, controle manual |
+- **Som ao conectar Arduino** — bip duplo de confirmação
+- **Alerta de bateria baixa** — bip de aviso (configurável de 9V a 11,5V)
+- Sons nas notificações do dashboard via Web Audio API
+- Toggle de sons nas Configurações
+
+</details>
+
+<details>
+<summary><b>🎯 Tour guiado — 33 passos</b></summary>
+<br/>
+
+Cobre todas as funcionalidades do app em 7 seções: Dashboard, Simulação, Histórico, Alertas, Configurações, Hardware e Tracker.
 
 </details>
 
@@ -170,46 +182,46 @@ Ou adicione uma exclusão no Windows Defender para a pasta onde o `.exe` está.
 
 ---
 
-## 📋 Novidades da v1.4.0
+## 📋 Novidades da v1.5.0
 
 ```
-✅ Servo MG996R (11kg/cm) para painéis maiores
-✅ Calibração dos sensores ACS712 pelo app — sem recompilar
-✅ Sparklines nos cards de tensão, corrente, potência e consumo
-✅ Badge de ganho do tracker no card de potência
-✅ Card de saldo pulsa em vermelho quando negativo
-✅ Temperatura integrada no gauge de eficiência
-✅ Modo Apresentação com KPIs gigantes e gráfico ao vivo
-✅ Botão Wokwi com animação e cópia automática do diagram.json
-✅ Tour atualizado para 33 passos com todas as novidades
-✅ Simulação completa: temperatura, umidade, LDRs e tracker por hora
-✅ Proteção IP65 e bateria 18650 documentadas na aba Hardware
-✅ Alertas movidos para canto inferior direito, máx 3 visíveis
-✅ Cooldown de 30s entre alertas do mesmo tipo
-✅ Design das telas de verificação completamente renovado
+✅ Modo noturno do tracker — repouso automático ao anoitecer
+✅ Alerta de bateria baixa com som e notificação (configurável)
+✅ Reconexão automática ao Arduino sem reiniciar o app
+✅ Modo Apresentação em tela cheia com QR Code do projeto
+✅ Auto-rotação de abas no Modo Apresentação (intervalo configurável)
+✅ Sons de notificação — conectar, desconectar, bateria, alertas
+✅ Atalhos de teclado F1–F8 + Ctrl+P para todas as abas
+✅ Gráfico histórico do ganho do tracker (últimas 12h)
+✅ Intervalo do tracker configurável: 1/5/15/30min/1h
+✅ Economia R$ adaptativa (até 5 casas decimais no início)
+✅ Scrollbar personalizado no tom do app
+✅ Reset completo da simulação — todos os cards voltam ao estado inicial
+✅ Log de erros em arquivo monitor_solar.log
+✅ Watchdog do WebSocket — reinicia automaticamente se cair
+✅ System Tray com tooltip mostrando potência e saldo em tempo real
 ```
 
 <details>
 <summary>Ver versões anteriores</summary>
 <br/>
 
+**v1.4.0**
+- Servo MG996R (11kg/cm), calibração ACS712 pelo app
+- Sparklines, badge ganho tracker, saldo pulsa vermelho
+- Modo Apresentação, botão Wokwi com animação
+
 **v1.3.0**
-- Dashboard redesenhado com gradiente animado e tooltip interativo
-- Tour guiado expandido: 31 passos em 7 seções
-- Tracker com indicador de decisão LDR em tempo real
-- Simulação solar funciona pela hora real do dia
+- Dashboard redesenhado, tour 31 passos
+- Tracker com LDR em tempo real
 
 **v1.2.0**
-- Seguidor solar 2 eixos com diagrama SVG animado
-- Histórico offline via SD Card com 3 abas
-- Relatório PDF completo
-- Comparativo de eficiência com/sem tracker
+- Seguidor solar 2 eixos, histórico SD Card
+- Relatório PDF, comparativo tracker
 
 **v1.1.0**
-- Tour guiado interativo
-- Modo claro/escuro
-- Notificações toast
-- Alertas automáticos de limites
+- Tour guiado, modo claro/escuro
+- Notificações toast, alertas automáticos
 
 </details>
 
